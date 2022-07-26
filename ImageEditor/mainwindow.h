@@ -11,7 +11,10 @@
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
 #include <QGraphicsPixmapItem>
+#include <QMap>
+#include <QPluginLoader>
 #include "opencv2/opencv.hpp"
+#include "editor_plugin_interface.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -31,6 +34,7 @@ private:
     void createActions();
     void showImage(QString path);
     void setupShortcuts();
+    void loadPlugins();
 
 private:
     QMenu *fileMenu;
@@ -62,6 +66,8 @@ private:
     QAction *blurAction;
     QAction *aboutAction;
 
+    QMap<QString, EditorPluginInterface*> editPlugins;
+
 private slots:
     void openImage();
     void zoomIn();
@@ -71,5 +77,6 @@ private slots:
     void nextImage();
     void blurImage();
     void about();
+    void pluginPerform();
 };
 #endif // MAINWINDOW_H

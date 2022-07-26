@@ -13,6 +13,7 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS += \
+    editor_plugin_interface.h \
     mainwindow.h
 
 FORMS += \
