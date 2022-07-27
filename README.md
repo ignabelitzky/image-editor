@@ -1,5 +1,5 @@
 # Image Editor
-Image editor made in Qt and OpenCV
+Image editor made in Qt using OpenCV
 
 ## Getting started
 To compile the Image Editor application you should open the file ImageEditor.pro
